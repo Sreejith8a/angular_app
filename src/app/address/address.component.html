@@ -1,0 +1,53 @@
+
+<div class="container mt-5">
+    <h3>Address</h3>
+
+    <form #addressForm="ngForm" (submit)="addressForm.valid && addAddress()">
+        <div class="form-group mt-2">
+            <label for="username">Name</label>
+            <input required #name="ngModel" [(ngModel)]="userdetails.name" type="text" class="form-control" name="name" id="username">
+            <div *ngIf="addressForm.submitted && name.errors">
+                <label style="color:red;font-size:12px" *ngIf="name.errors['required']">*Name is required</label>
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label for="username">Address</label>
+            <input required #name="ngModel" [(ngModel)]="userdetails.address" type="text" class="form-control" name="addresss" id="username">
+            <div *ngIf="addressForm.submitted && name.errors">
+                <label style="color:red;font-size:12px" *ngIf="name.errors['required']">*Address is required</label>
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label for="username">Area</label>
+            <input required #name="ngModel" [(ngModel)]="userdetails.area" type="text" class="form-control" name="area" id="username">
+            <div *ngIf="addressForm.submitted && name.errors">
+                <label style="color:red;font-size:12px" *ngIf="name.errors['required']">*Area is required</label>
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label for="username">City</label>
+            <input required #name="ngModel" [(ngModel)]="userdetails.city" type="text" class="form-control" name="city" id="username">
+            <div *ngIf="addressForm.submitted && name.errors">
+                <label style="color:red;font-size:12px" *ngIf="name.errors['required']">*City is required</label>
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label for="username">Pincode</label>
+            <input required #name="ngModel" [(ngModel)]="userdetails.pincode" type="text" class="form-control" name="pincode" id="username">
+            <div *ngIf="addressForm.submitted && name.errors">
+                <label style="color:red;font-size:12px" *ngIf="name.errors['required']">*Pincode is required</label>
+            </div>
+        </div>
+        <div class="form-group mt-2">
+            <label for="username">Phone</label>
+            <input required #name="ngModel" [(ngModel)]="userdetails.phone" type="text" class="form-control" name="phone" id="username">
+            <div *ngIf="addressForm.submitted && name.errors">
+                <label style="color:red;font-size:12px" *ngIf="name.errors['required']">*Phone is required</label>
+            </div>
+        </div>
+        <div class="form-group mt-3">
+           <button  class="btn btn-warning">Add Address</button>
+        </div>
+    </form>
+    
+</div>

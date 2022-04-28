@@ -1,0 +1,43 @@
+<style type="text/css">
+	td{
+		text-align: left;
+        padding-left: 10px;
+	}
+</style>
+
+<div class="card mt-5" style="margin:auto; max-width: 800px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src={{cake.image}} class="img-fluid my-3 mx-2 " alt="cake_image" style="height:300px;width:300px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title">{{cake.name}}</h4>
+        <p class="card-text"><small class="text-muted">{{cake.reviews}} Reviews</small></p>
+        <p class="card-text">₹{{cake.price}}</p>
+        <p class="card-text">{{cake.description}}</p>
+        <table>
+            <tr>
+                <td><p class="fw-bold">Flavour</p></td>
+                <td><p>{{cake.flavour}}</p></td>
+            </tr>
+            <tr>
+                <td><p class="fw-bold">Ingredients</p></td>
+                <td><p>{{cake.ingredients}}</p></td>
+            </tr>
+            <tr>
+                <td><p class="fw-bold">Occasion</p></td>
+                <td><p>{{cake.type}}</p></td>
+            </tr>
+            <tr>
+                <td><p class="fw-bold">Weight</p></td>
+                <td><p>{{cake.weight}}Kg</p></td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <button *ngIf="!isadded" (click)="addtoCart()" class="btn btn-warning">Add to Cart <fa-icon [icon]="faCartShopping"></fa-icon></button>
+  <button *ngIf="isadded" disabled (click)="addtoCart()" class="btn btn-warning"><fa-icon [icon]="faCartShopping"></fa-icon>Adding to Cart</button>
+</div>

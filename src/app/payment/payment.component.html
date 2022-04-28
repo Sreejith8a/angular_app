@@ -1,0 +1,41 @@
+<h3>Payment</h3>
+
+<div class="container mt-5" >
+    <h5>Your Items</h5>
+    
+    <div class="table-responsive">
+      <table class="table mt-3">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Image</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let each of cartitems; let i=index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{each.name}}</td>
+              <td><img style="height: 70px;width: 70px;" [src]="each.image"></td>
+              <td>{{each.price}}</td>
+              <td>{{each.quantity}}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  <h6 class="mt-2" style="color: rgb(220, 24, 24);">Total : {{ totalprice | currency:'INR' }}</h6>
+    <hr>
+    <h5>Your Address</h5>
+    <p>{{ useraddress.name }}</p>
+    <p>{{ useraddress.address}}</p>
+    <p>{{ useraddress.area}}</p>
+    <p>{{ useraddress.pincode}}</p>
+    <p>{{ useraddress.phone }}</p>
+    <hr>
+    <h5>We only accept Cash on Delivery as of now</h5>
+    <input type="checkbox" checked>Cash on delivery<br>
+    <button (click)="placeorder()" class="btn btn-warning my-3">Place Order</button>
+
+</div>

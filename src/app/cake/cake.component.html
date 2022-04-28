@@ -1,0 +1,7 @@
+<div class="card" style="width: 16rem;">
+  <img (click)="showcakedetails()" [src]="cakedata.image" class="card-img-top" alt="cake_image" style="height:200px">
+  <div class="card-body">
+    <h6 class="card-title">{{cakedata.name}}</h6>
+    <p class="card-text">{{cakedata.price | currency:'INR'}}</p>
+  </div>
+</div>

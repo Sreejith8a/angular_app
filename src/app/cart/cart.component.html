@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <h4>Your Shopping Cart</h4>
+  <div *ngIf="!cartitems?.length" class="mt-5">
+      <h6>Your cart is empty!!</h6>
+  </div>
+  <div *ngIf="cartitems?.length">
+  <table  class="table mt-5">
+    <thead class="table-secondary">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let eachitem of cartitems; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{eachitem.name}}</td>
+        <td><img style="height: 70px;width: 70px;" [src]="eachitem.image"></td>
+        <td>{{eachitem.price}}</td>
+        <td><button (click)="increaseQuantity(i)" class="btn btn-outline-primary" style="font-size: 7px;"><fa-icon [icon]="faPlus"></fa-icon></button><span style="padding: 10px;">{{eachitem.quantity}}</span><button (click)="decreaseQuantity(i)" class="btn btn-outline-danger" style="font-size: 7px;"><fa-icon [icon]="faMinus"></fa-icon></button></td>
+        <td><button (click)="removeFromCart(i)" class="btn btn-outline-danger" style="border: none;"><fa-icon [icon]="faTrash"></fa-icon></button></td>
+      </tr>
+    </tbody>
+  </table>
+  <h6 class="text-danger" style="float: right;">Total Amount <span style="color: black;"><h6>{{ totalprice|currency:'INR' }}</h6></span>  </h6>
+  <div style="clear: both;"></div>
+  <button (click)="checkout()" class="btn btn-warning mt-2"  style="float: right;">Checkout</button>
+</div>
+</div>

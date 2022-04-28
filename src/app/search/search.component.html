@@ -1,0 +1,5 @@
+{{ searchresult.length }} cakes found 
+
+<div class="row">
+    <app-cake *ngFor="let cake of searchresult" class="col mt-2" [cakedata]="cake"></app-cake>
+</div>

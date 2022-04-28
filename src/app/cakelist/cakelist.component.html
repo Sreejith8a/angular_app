@@ -1,0 +1,5 @@
+
+<button (click)="descending()" class="btn text-primary" style="border: 1px solid rgb(40, 139, 185);font-size: 12px; ">High to Low</button><button (click)="ascending()"class="btn  text-primary" style="border: 1px solid rgb(40, 139, 185);font-size: 12px;">Low to High</button>
+<div class="row" style="margin-left: 25px;">
+		<app-cake *ngFor="let cake of cakes" class="col mt-2" [cakedata]="cake"></app-cake>
+</div>

@@ -1,0 +1,43 @@
+<div class="container mt-4" style="width: 800px;">
+    <h4>Add Cake</h4>
+    <form class="mt-3">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input [(ngModel)]="cakedetails.name" name="name" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input [(ngModel)]="cakedetails.price" name="price"type="text" class="form-control">
+        </div>
+    
+        <div class="mb-3">
+            <label class="form-label">Type</label>
+            <input [(ngModel)]="cakedetails.type" name="type" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Weight (in Kg)</label>
+            <input [(ngModel)]="cakedetails.weight" name="weight" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ingredients (comma seperated)</label>
+            <input [(ngModel)]="cakedetails.ingredients" name="ingredients" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label><br>
+            <textarea [(ngModel)]="cakedetails.description" name="desc" cols="80" rows="6"></textarea>
+        </div>
+        <div class="mb-3">
+            <input [(ngModel)]="cakedetails.eggless" name="eggless" type="checkbox" value="false" >Eggless
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Image</label><br>
+            <input (change)="getFile($event)" type="file">
+            <button class="btn btn-outline-primary" (click)="upload()" style="font-size: 12px;">Upload</button>
+        </div>
+        <div class="mb-3">
+            <button (click)="addCake()" class="btn btn-warning">Add Cake</button>
+        </div>
+
+      </form>
+    
+</div>

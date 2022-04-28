@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top py-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="font-size: 26px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">{{brand_name}}</a>
+
+    <form class="d-flex" >
+      <input [(ngModel)]="searchval"  name="searchvalue" class="form-control mx-2" type="search" placeholder="Search" aria-label="Search">
+      <button  (click)="search()"  class="btn btn-outline-warning" type="submit"><fa-icon [icon]="faSearch"></fa-icon></button>
+    </form>
+
+    <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      
+      <!-- <form class="d-flex">
+        <input [(ngModel)]="searchval" name="searchvalue" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button  (click)="search()" class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+      <button  *ngIf="!isloggedin" routerLink="/signup" class="btn btn-success mx-2"><fa-icon [icon]="faUserPlus"></fa-icon> Sign Up</button>
+      <button  *ngIf="isAdmin" routerLink="/addcake" class="btn btn-outline-warning mx-2"><fa-icon [icon]="faCake"></fa-icon> AddCake</button>
+        <button  *ngIf="!isloggedin" routerLink="/login" class="btn btn-success"><fa-icon [icon]="faSignIn"></fa-icon> Login</button>
+        <button  *ngIf="isloggedin" routerLink="/cart" class="btn btn-outline-warning position-relative mx-2">
+          <fa-icon [icon]="faCartShopping"></fa-icon> Cart
+          <span *ngIf="length" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{length}}
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </button>
+        <button  *ngIf="isloggedin" routerLink="/previousorders" class="btn btn-outline-warning mx-2"><fa-icon [icon]="faBoxArchive"></fa-icon> Orders</button>
+        <button   *ngIf="isloggedin" (click)="logout()" class="btn btn-outline-danger mx-2"><fa-icon [icon]="faSignOut"></fa-icon> Logout</button>
+    </div>
+  </div>
+</nav>
